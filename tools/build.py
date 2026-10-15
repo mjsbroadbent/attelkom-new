@@ -32,7 +32,7 @@ def page(path, title, body, active=None, desc="Attelkom — Irad's #1 ISP. Home 
 <meta name="description" content="{html.escape(desc)}">
 <meta name="keywords" content="attelkom, internet, irad, talas, nurzhan, 4g, lte, provider, mobile, tariffs, интернет, провайдер">
 <link rel="icon" href="{p}img/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="{p}css/style.css?v=2.3.7">
+<link rel="stylesheet" href="{p}css/style.css?v=2.3.8">
 </head>
 <body>
 <div class="topbar"><div class="wrap">
@@ -167,6 +167,19 @@ def plans_html():
     return out
 
 page("index.html", "Main", f'''
+<div class="promo-pop" id="promopop"><div class="pp">
+  <button class="pp-x" aria-label="Close">&times;</button>
+  <img src="{{p}}img/hero_4g.jpg" alt="">
+  <div class="pp-in">
+    <div class="pp-tag">Only until 31 October!</div>
+    <h3>Switch to «Joguru» and get <span>+20 GB</span> for FREE!*</h3>
+    <p>Connect the tariff «Joguru» and receive an additional 20 GB of 4G internet every month for the first 3 months. Hurry, the offer is limited!</p>
+    <div class="pp-timer">Offer ends in: <b id="pptimer">00:14:59</b></div>
+    <a class="btn o pp-go" href="{{p}}mobile.html">CONNECT NOW</a>
+    <label class="pp-no"><input type="checkbox"> Do not show again</label>
+    <div class="pp-fine">* Bonus gigabytes are valid in the home region only, from 01:00 to 07:00. Connection of the tariff is paid (150 som). The offer does not apply to subscribers who used other promotions in 2026.</div>
+  </div>
+</div></div>
 <div class="hero">{slides_html}<button class="arrow prev">&#8249;</button><button class="arrow next">&#8250;</button><div class="dots"></div></div>
 <div class="wrap">
   <div class="tiles">

@@ -27,6 +27,23 @@
     timer = setInterval(function () { show(cur + 1); }, 4500);
   }
 
+
+  // ---- promo popup (index only) ----
+  // shows 2.5s after load, comes back 45s after closing. "Do not show again" not connected yet
+  var pop = document.getElementById('promopop');
+  if (pop) {
+    var left = 14 * 60 + 59, tEl = document.getElementById('pptimer');
+    setInterval(function () {
+      left = left > 0 ? left - 1 : 14 * 60 + 59;
+      tEl.textContent = '00:' + String(Math.floor(left / 60)).padStart(2, '0') + ':' + String(left % 60).padStart(2, '0');
+    }, 1000);
+    var openPop = function () { pop.classList.add('show'); };
+    setTimeout(openPop, 2500);
+    var closePop = function () { pop.classList.remove('show'); setTimeout(openPop, 45000); };
+    pop.querySelector('.pp-x').onclick = closePop;
+    // clicking the dark background used to close it, disabled by marketing
+  }
+
   // ---- burger ----
   var b = document.querySelector('.burger');
   if (b) b.onclick = function () { document.querySelector('nav.menu').classList.toggle('open'); };
