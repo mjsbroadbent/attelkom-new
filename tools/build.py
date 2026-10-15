@@ -37,7 +37,7 @@ def page(path, title, body, active=None, desc="Attelkom — Irad's #1 ISP. Home 
 <body>
 <div class="topbar"><div class="wrap">
   <span>Hotline: <span class="hot">105</span> (free from Attelkom numbers) &nbsp;|&nbsp; +996 39 312 10 50</span>
-  <span><a href="{p}coverage.html">Coverage map</a><a href="{p}support.html">Service centres</a><a href="{p}support.html">Help</a></span>
+  <span><a href="https://maps.attelkom.com/">Attelkom Maps</a><a href="https://ads.attelkom.com/">Advertising</a><a href="{p}coverage.html">Coverage map</a><a href="{p}support.html">Service centres</a><a href="{p}support.html">Help</a></span>
 </div></div>
 <header class="main"><div class="wrap">
   <a class="logo" href="{p}index.html"><img src="{p}img/logo.svg" alt="ATTELKOM — Irad's #1 ISP"></a>
@@ -56,7 +56,7 @@ def page(path, title, body, active=None, desc="Attelkom — Irad's #1 ISP. Home 
       <div class="soc"><a href="#" title="Tulpar">T</a><a href="#" title="Facebook">f</a><a href="#" title="Instagram">in</a><a href="#" title="YouTube">&#9654;</a></div>
     </div>
     <div><h4>For you</h4><a href="{p}internet.html">Home Internet</a><a href="{p}mobile.html">Mobile tariffs</a><a href="{p}pay.html">Attelkom Pay</a><a href="{p}coverage.html">Coverage</a><a href="{p}login.html">Personal account</a></div>
-    <div><h4>Company</h4><a href="{p}about.html">About Attelkom</a><a href="{p}news/index.html">News</a><a href="{p}about.html#tenders">Tenders</a><a href="{p}about.html#jobs">Vacancies</a><a href="https://mjsbroadbent.github.io/jarnama/">Attelkom Jarnama (advertising)</a></div>
+    <div><h4>Company</h4><a href="{p}about.html">About Attelkom</a><a href="{p}news/index.html">News</a><a href="{p}about.html#tenders">Tenders</a><a href="{p}about.html#jobs">Vacancies</a><a href="https://ads.attelkom.com/">Attelkom Jarnama (advertising)</a><a href="https://maps.attelkom.com/">Attelkom Maps</a></div>
     <div><h4>Useful links</h4><a href="{p}support.html">Service centres</a><a href="{p}support.html#faq">FAQ</a><a href="{p}docs.html">Public offer</a><a href="{p}docs.html">Privacy policy</a><a href="{p}blocked.html">Restricted resources</a></div>
   </div>
   <div class="bottom"><span>© 2019–2024 OJSC «Attelkom». All rights reserved. Licence of the Communications Regulator No. 0014/08.</span><span>Site by WebStudio Talas</span></div>
@@ -197,6 +197,8 @@ page("index.html", "Main", f'''
   <div class="cards">
     <div class="card"><div class="in"><h3>&#127760; Largest network</h3><p>1 800 km of fibre backbone and more than 600 base stations across the ISEZ.</p></div></div>
     <div class="card"><div class="in"><h3>&#128737; Reliability</h3><p>Our own data centre in Nurzhan and three independent international channels.</p></div></div>
+    <div class="card"><div class="in"><h3>&#128506; Attelkom Maps</h3><p>Maps and directions for every city and road of Irad at <a href="https://maps.attelkom.com/">maps.attelkom.com</a>.</p></div></div>
+    <div class="card"><div class="in"><h3>&#128226; Advertise with us</h3><p>Banner advertising on the leading sites of Irad with <a href="https://ads.attelkom.com/">Attelkom Jarnama</a>.</p></div></div>
     <div class="card"><div class="in"><h3>&#128222; Support 24/7</h3><p>Call 105 or visit one of our 46 service centres. Online consultant on the site.</p></div></div>
   </div>
 </div></section>
@@ -259,7 +261,7 @@ page("business.html", "Business", f'''
   <tr><td>Hosting and domains</td><td>Registration of domains in the zone <b>.ir.ad</b>, virtual hosting, VPS</td></tr>
   <tr><td>Microwave and satellite</td><td>Connection of remote industrial sites, mines and border posts</td></tr>
   <tr><td>Corporate mobile</td><td>Group tariffs from 10 SIM cards, single invoice</td></tr>
-  <tr><td>Advertising</td><td>Banner advertising on the <a href="https://mjsbroadbent.github.io/jarnama/">Attelkom Jarnama</a> network</td></tr></table>
+  <tr><td>Advertising</td><td>Banner advertising on the <a href="https://ads.attelkom.com/">Attelkom Jarnama</a> network (ads.attelkom.com)</td></tr></table>
   <p class="fine">* Certification in process.</p>
   <p>For commercial offers please write to <b>b2b@attelkom.com</b> or call +996 39 312 10 77 (working days 9:00–18:00).</p>
 </div></div>''', active="business.html")
@@ -294,7 +296,7 @@ page("coverage.html", "Coverage", f'''
   <div id="covres"></div>
   <h2 style="margin-top:30px">Map</h2>
   <div style="background:#dfe8df url({{p}}img/hero_tower.jpg) center/cover;height:360px;display:flex;align-items:center;justify-content:center">
-    <div style="background:rgba(255,255,255,.9);padding:16px 22px;font-size:13px">The interactive map is temporarily unavailable. Please use the form above.</div></div>
+    <div style="background:rgba(255,255,255,.9);padding:16px 22px;font-size:13px">The interactive coverage map is temporarily unavailable. Please use the form above. Street maps: <a href="https://maps.attelkom.com/">maps.attelkom.com</a></div></div>
 </div></div>''')
 
 # ---------------------------------------------------------------- about

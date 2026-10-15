@@ -9,7 +9,7 @@ In-world brief: Attelkom has no real competition, so the site is a mid-budget ag
 - `css/style.css`, `js/main.js` — template styles and scripts.
 - `img/logo.svg`, `img/logo-white.svg`, `img/favicon.svg` — made from the owner's logo SVG (`tools/attelkom_logo_original.svg`), recoloured.
 - `img/*.jpg` — AI news/hero images (FLUX.1 Krea, owner's PC).
-- Ads come from [Attelkom Jarnama](https://github.com/mjsbroadbent/jarnama) (`serve.js`, theme `current local state`).
+- Links to the subdomains ads.attelkom.com (Jarnama, repo mjsbroadbent/jarnama) and maps.attelkom.com (Kartalar, repo mjsbroadbent/kartalar). Ads come from [Attelkom Jarnama](https://github.com/mjsbroadbent/jarnama) (`serve.js`, theme `current local state`).
 
 ## Lore used
 Founded 1994 (US defense contract), privatized 1999, HQ on Communications Square, Talas (2002); Director-General Samat Kasymov; .ir.ad zone since 1996; GSM 1997, 3G 2010, 4G 2016; ~2.6 million mobile subscriptions; 1,800 km fibre backbone; data centre in Nurzhan; Attelkom Pay with Talasbank (SMS payments for herders); no service in the ATR; 2008 security directives and blocking; "technical works" during the 2023 protests. Prices are in som (8.40/USD).
