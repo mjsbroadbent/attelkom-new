@@ -373,7 +373,6 @@ page("about.html", "About", f'''
   <h3 id="tenders">Tenders</h3><p>There are no active tenders at the moment.</p>
   <h3 id="jobs">Vacancies</h3><p>Send your CV to <b>hr@attelkom.net</b>. Current vacancies: network engineer (Nurzhan), sales manager (Iyık Janyl), installer (Talas, 3 positions).</p>
   <h3>Contacts</h3><p>Communications Square 1, Talas<br>Phone: +996 39 312 10 50<br>E-mail: info@attelkom.net</p>
-  <p style="margin-top:30px;font-size:12px;color:#888">This site is part of the Irad worldbuilding project: Irad and Attelkom are fictional. See <a href="https://irad.wiki/wiki/Attelkom" style="color:#888">Attelkom on Irad Wiki</a>.</p>
 </div></div>''', active="about.html")
 
 # ---------------------------------------------------------------- support
