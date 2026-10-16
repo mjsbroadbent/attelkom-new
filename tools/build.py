@@ -64,6 +64,8 @@ def page(path, title, body, active=None, desc=None, base=False, img="img/hero_to
 {seo}<meta name="keywords" content="attelkom, internet, irad, talas, nurzhan, 4g, lte, provider, mobile, tariffs, интернет, провайдер">
 <link rel="icon" href="{p}img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="{p}css/style.css?v=2.3.8">
+<script>window.goatcounter=new Object();goatcounter.path=p=>location.host+p;</script>
+<script data-goatcounter="https://irad.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <div class="topbar"><div class="wrap">
