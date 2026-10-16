@@ -16,3 +16,8 @@ Founded 1994 (US defense contract), privatized 1999, HQ on Communications Square
 
 ## Hosting
 Works from GitHub Pages at `/attelkom-new/` or from the root of attelkom.net. `build.py` also writes each page's description, canonical address and share tags (`DESCS` at the top), `sitemap.xml` and `robots.txt`; the login and language mock-ups are `noindex`. Served at attelkom.net (`CNAME`); www.attelkom.net is deliberately still the old site (repo attelkom).
+
+## Logos
+
+- `img/logo.svg`, `img/logo-white.svg`, `img/favicon.svg` — the original horse-and-globe emblem with the serif "ATTELKOM" wordmark. In-world it's still on letterheads, bills and shop signs; here it's the favicon.
+- `img/logo-2019.svg`, `img/logo-2019-white.svg` — WebStudio Talas's 2019 "modernized" version used in the site header and footer: the old emblem crammed into a glossy app-icon tile, lowercase Poppins wordmark, Wi-Fi arcs over the "o", "Connecting Irad" tagline. Deliberately middling. Regenerate with `python3 tools/make_logo_2019.py`.

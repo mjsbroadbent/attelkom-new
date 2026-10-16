@@ -39,7 +39,7 @@ h2:after { content: ""; display: block; width: 60px; height: 4px; background: va
 /* ===== HEADER ===== */
 header.main { background: #fff; box-shadow: 0 3px 8px rgba(0,0,0,.15); position: sticky; top: 0; z-index: 50; }
 header.main .wrap { display: flex; align-items: center; height: 78px; }
-.logo img { height: 52px; display: block; }
+.logo img { height: 58px; display: block; }
 nav.menu { margin-left: auto; display: flex; align-items: center; }
 nav.menu a {
   font-family: 'Montserrat', Arial, sans-serif; font-weight: 700; text-transform: uppercase;
@@ -168,7 +168,7 @@ footer.main .cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap
 footer.main h4 { color: #fff; text-transform: uppercase; font-family: 'Montserrat'; font-size: 14px; margin: 0 0 12px; }
 footer.main a { color: #9fb3a4; text-decoration: none; display: block; padding: 3px 0; }
 footer.main a:hover { color: #fff; }
-footer.main .logo-f { height: 46px; margin-bottom: 12px; }
+footer.main .logo-f { height: 50px; margin-bottom: 12px; }
 footer.main .soc a { display: inline-block; width: 32px; height: 32px; line-height: 32px; text-align: center; background: #2c3d31; border-radius: 50%; margin-right: 6px; color: #fff; font-size: 13px; }
 footer.main .bottom { border-top: 1px solid #2c3d31; margin-top: 30px; padding: 14px 0; font-size: 12px; display: flex; justify-content: space-between; }
 

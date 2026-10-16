@@ -71,7 +71,7 @@ def page(path, title, body, active=None, desc=None, base=False, img="img/hero_to
   <span><a href="https://maps.attelkom.net/">Attelkom Maps</a><a href="https://ads.attelkom.net/">Advertising</a><a href="{p}coverage.html">Coverage map</a><a href="{p}support.html">Service centres</a><a href="{p}support.html">Help</a></span>
 </div></div>
 <header class="main"><div class="wrap">
-  <a class="logo" href="{p}index.html"><img src="{p}img/logo.svg" alt="ATTELKOM — Irad's #1 ISP"></a>
+  <a class="logo" href="{p}index.html"><img src="{p}img/logo-2019.svg" alt="attelkom — Connecting Irad"></a>
   <nav class="menu">{nav}</nav>
   <div class="langs"><a class="on" href="#">EN</a>|<a href="{p}lang/index.html">IRD</a>|<a href="{p}lang/index.html">РУС</a></div>
   <a class="btn-login" href="{p}login.html">&#128100; Personal account</a>
@@ -82,7 +82,7 @@ def page(path, title, body, active=None, desc=None, base=False, img="img/hero_to
 <footer class="main"><div class="wrap">
   <div class="cols">
     <div>
-      <img class="logo-f" src="{p}img/logo-white.svg" alt="ATTELKOM">
+      <img class="logo-f" src="{p}img/logo-2019-white.svg" alt="attelkom">
       <p>OJSC «Attelkom» is the leading provider of telecommunication services in Irad since 1994. Fibre, 4G/LTE, satellite, hosting and data centre services for citizens, business and the state.</p>
       <div class="soc"><a href="#" title="Tulpar">T</a><a href="#" title="Facebook">f</a><a href="#" title="Instagram">in</a><a href="#" title="YouTube">&#9654;</a></div>
     </div>
