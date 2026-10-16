@@ -15,4 +15,4 @@ In-world brief: Attelkom has no real competition, so the site is a mid-budget ag
 Founded 1994 (US defense contract), privatized 1999, HQ on Communications Square, Talas (2002); Director-General Samat Kasymov; .ir.ad zone since 1996; GSM 1997, 3G 2010, 4G 2016; ~2.6 million mobile subscriptions; 1,800 km fibre backbone; data centre in Nurzhan; Attelkom Pay with Talasbank (SMS payments for herders); no service in the ATR; 2008 security directives and blocking; "technical works" during the 2023 protests. Prices are in som (8.40/USD).
 
 ## Hosting
-Works from GitHub Pages at `/attelkom-new/` or from the root of attelkom.net. Served at attelkom.net (`CNAME`); www.attelkom.net is deliberately still the old site (repo attelkom).
+Works from GitHub Pages at `/attelkom-new/` or from the root of attelkom.net. `build.py` also writes each page's description, canonical address and share tags (`DESCS` at the top), `sitemap.xml` and `robots.txt`; the login and language mock-ups are `noindex`. Served at attelkom.net (`CNAME`); www.attelkom.net is deliberately still the old site (repo attelkom).

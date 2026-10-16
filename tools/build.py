@@ -19,7 +19,38 @@ NOTICE = ("Dear subscribers! Planned technical works on the Talas–Nurzhan back
           "New tariff «Burkut 100» — now in central Talas! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "
           "Pay for Attelkom services by SMS with Attelkom Pay — send PAY to 5050.")
 
-def page(path, title, body, active=None, desc="Attelkom — Irad's #1 ISP. Home internet, mobile, business solutions.", base=False):
+SITE = "https://attelkom.net/"
+# One description per page for search results and link previews (news pages use their first paragraph).
+DESCS = {
+    "index.html": "Attelkom, Irad's largest internet and mobile operator: home internet, 4G mobile, Attelkom Pay and business services in Talas, Nurzhan and Iyık Janyl.",
+    "internet.html": "Attelkom home internet tariffs: fibre and ADSL plans for Talas, Nurzhan and Iyık Janyl, with prices in som and free installation offers.",
+    "mobile.html": "Attelkom mobile tariffs: 4G/LTE plans, prepaid packages and USIM replacement. Coverage across the ISEZ district centres.",
+    "business.html": "Attelkom for business: dedicated internet channels, corporate mobile plans, data centre hosting in Nurzhan and solutions for state organisations.",
+    "pay.html": "Attelkom Pay: pay for mobile, utilities, veterinary services and more from your phone balance by SMS to 5050, together with Talasbank.",
+    "coverage.html": "Attelkom coverage map: where 2G, 3G and 4G/LTE mobile service and home internet are available in the Irad Special Economic Zone.",
+    "about.html": "About OJSC Attelkom: founded in 1994, Irad's national telecom operator, with its head office on Communications Square in Talas.",
+    "support.html": "Attelkom help: service centres in Talas, Nurzhan and Iyık Janyl, the 105 hotline, frequently asked questions and how to pay.",
+    "blocked.html": "Restricted resources: information on websites restricted in the Irad Special Economic Zone under the 2008 security directives.",
+    "docs.html": "Attelkom documents: public offer, privacy policy, tariff regulations and licences of OJSC Attelkom.",
+    "news/index.html": "Attelkom news: network expansion, tariff changes, technical works and new services from Irad's national operator.",
+}
+NOINDEX = {"login.html", "lang/index.html", "404.html"}   # mock-ups and the error page stay out of search
+PAGES = []
+
+def page(path, title, body, active=None, desc=None, base=False, img="img/hero_tower.jpg"):
+    desc = desc or DESCS.get(path, "Attelkom, Irad's largest internet and mobile operator.")
+    url = SITE + (path[:-10] if path.endswith("index.html") else path)
+    if path not in NOINDEX: PAGES.append(url)
+    full_title = f"{title} | ATTELKOM"
+    seo = (f'<link rel="canonical" href="{url}">\n'
+           + ('<meta name="robots" content="noindex">\n' if path in NOINDEX else '')
+           + f'<meta property="og:type" content="{"article" if path.startswith("news/") and path != "news/index.html" else "website"}">\n'
+           f'<meta property="og:site_name" content="Attelkom">\n'
+           f'<meta property="og:title" content="{html.escape(full_title)}">\n'
+           f'<meta property="og:description" content="{html.escape(desc)}">\n'
+           f'<meta property="og:url" content="{url}">\n'
+           f'<meta property="og:image" content="{SITE}{img}">\n'
+           f'<meta name="twitter:card" content="summary_large_image">\n')
     depth = path.count("/")
     p = "../" * depth
     nav = "".join(f'<a href="{p}{h}"{" class=\"on\"" if h == active else ""}>{t}</a>' for h, t in NAV)
@@ -30,7 +61,7 @@ def page(path, title, body, active=None, desc="Attelkom — Irad's #1 ISP. Home 
 {BASE if base else ""}<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)} | ATTELKOM</title>
 <meta name="description" content="{html.escape(desc)}">
-<meta name="keywords" content="attelkom, internet, irad, talas, nurzhan, 4g, lte, provider, mobile, tariffs, интернет, провайдер">
+{seo}<meta name="keywords" content="attelkom, internet, irad, talas, nurzhan, 4g, lte, provider, mobile, tariffs, интернет, провайдер">
 <link rel="icon" href="{p}img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="{p}css/style.css?v=2.3.8">
 </head>
@@ -125,8 +156,14 @@ def news_card(slug, date, title, img, body, p="{p}"):
     if len(first) > 120: first = first[:117].rsplit(" ", 1)[0] + "..."
     return f'''<div class="card"><a href="{p}news/{slug}.html"><img src="{p}{img}" alt=""></a><div class="in"><div class="d">{date}</div><a href="{p}news/{slug}.html"><h3>{title}</h3></a><p>{first}</p></div></div>'''
 
+def lead_text(body, n=158):
+    import re
+    t = re.sub("<[^>]+>", "", body.split("</p>")[0]).strip()
+    if t.startswith("Dear subscribers") and "</p>" in body: t = re.sub("<[^>]+>", "", body.split("</p>")[1]).strip()
+    return t if len(t) <= n else t[:n - 1].rsplit(" ", 1)[0] + "…"
+
 for slug, date, title, img, body in NEWS:
-    page(f"news/{slug}.html", title, f'''
+    page(f"news/{slug}.html", title, desc=lead_text(body), img=img, body=f'''
 {head("News", [("news/index.html", "News")])}
 <div class="wrap"><div class="content article">
 <img class="hero-img" src="{{p}}{img}" alt="">
@@ -336,6 +373,7 @@ page("about.html", "About", f'''
   <h3 id="tenders">Tenders</h3><p>There are no active tenders at the moment.</p>
   <h3 id="jobs">Vacancies</h3><p>Send your CV to <b>hr@attelkom.net</b>. Current vacancies: network engineer (Nurzhan), sales manager (Iyık Janyl), installer (Talas, 3 positions).</p>
   <h3>Contacts</h3><p>Communications Square 1, Talas<br>Phone: +996 39 312 10 50<br>E-mail: info@attelkom.net</p>
+  <p style="margin-top:30px;font-size:12px;color:#888">This site is part of the Irad worldbuilding project: Irad and Attelkom are fictional. See <a href="https://irad.wiki/wiki/Attelkom" style="color:#888">Attelkom on Irad Wiki</a>.</p>
 </div></div>''', active="about.html")
 
 # ---------------------------------------------------------------- support
@@ -412,3 +450,12 @@ page("404.html", "Page not found", f'''
   <p><a class="btn" href="index.html">To main page</a></p>
 </div></div>''', base=True)
 print("built")
+
+# ---------------------------------------------------------------- sitemap, robots
+with open(os.path.join(ROOT, "sitemap.xml"), "w") as f:
+    f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+    f.write("".join(f"  <url><loc>{u}</loc></url>\n" for u in PAGES))
+    f.write("</urlset>\n")
+with open(os.path.join(ROOT, "robots.txt"), "w") as f:
+    f.write("User-agent: *\nAllow: /\n\nSitemap: https://attelkom.net/sitemap.xml\n")
+print(len(PAGES), "pages in sitemap.xml")
