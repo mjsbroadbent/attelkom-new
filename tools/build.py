@@ -66,6 +66,8 @@ def page(path, title, body, active=None, desc=None, base=False, img="img/hero_to
 <link rel="stylesheet" href="{p}css/style.css?v=2.3.8">
 <script>window.goatcounter=new Object();goatcounter.path=p=>location.host+p;</script>
 <script data-goatcounter="https://irad.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QTS2XFLJD7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-QTS2XFLJD7');</script>
 </head>
 <body>
 <div class="topbar"><div class="wrap">
