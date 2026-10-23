@@ -170,6 +170,8 @@ footer.main a { color: #9fb3a4; text-decoration: none; display: block; padding: 
 footer.main a:hover { color: #fff; }
 footer.main .logo-f { height: 50px; margin-bottom: 12px; }
 footer.main .soc a { display: inline-block; width: 32px; height: 32px; line-height: 32px; text-align: center; background: #2c3d31; border-radius: 50%; margin-right: 6px; color: #fff; font-size: 13px; }
+footer.main .soc a.tp { vertical-align: top; }
+footer.main .soc a.tp img { width: 20px; height: 20px; border-radius: 5px; vertical-align: -5px; }
 footer.main .bottom { border-top: 1px solid #2c3d31; margin-top: 30px; padding: 14px 0; font-size: 12px; display: flex; justify-content: space-between; }
 
 /* chat widget */
